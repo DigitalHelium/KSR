@@ -21,7 +21,7 @@ namespace KSR
         private void Form1_Load(object sender, EventArgs e)
         {
             //Настройки для компонента GMap.
-            //gMapControl1.Bearing = 0;
+            gMapControl1.Bearing = 0;
 
             //CanDragMap - Если параметр установлен в True,
             //пользователь может перетаскивать карту
