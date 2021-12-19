@@ -20,7 +20,7 @@ namespace KSR
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //map1Init();
+            map1Init();
             map2Init();
         }
         public void map1Init()
@@ -102,10 +102,10 @@ namespace KSR
         }
         public void map2Init()
         {
-            gMapControl2.Location = ;
+            //gMapControl2.Location = new System.Drawing.Point(538, 12);
             gMapControl2.Bearing = 0;
-            gMapControl2.CanDragMap = true;
-            gMapControl2.DragButton = MouseButtons.Left;
+            //gMapControl2.CanDragMap = true;
+            //gMapControl2.DragButton = MouseButtons.Left;
             gMapControl2.GrayScaleMode = true;
             gMapControl2.MarkersEnabled = true;
             gMapControl2.MaxZoom = 20;
@@ -126,7 +126,7 @@ namespace KSR
             gMapControl2.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
             marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
-            marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
+            marker.ToolTipText = "ул.Красно-\nармейская х\n ул.Галакти-\nоновская";
             markersOverlay.Markers.Add(marker);
             gMapControl2.Overlays.Add(markersOverlay);
         }

@@ -42,9 +42,8 @@
             this.gMapControl1.CanDragMap = true;
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(15, 19);
+            this.gMapControl1.Location = new System.Drawing.Point(6, 19);
             this.gMapControl1.MarkersEnabled = true;
-            this.gMapControl1.MaximumSize = new System.Drawing.Size(359, 337);
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinimumSize = new System.Drawing.Size(359, 337);
             this.gMapControl1.MinZoom = 2;
@@ -55,7 +54,7 @@
             this.gMapControl1.RetryLoadTile = 0;
             this.gMapControl1.RoutesEnabled = true;
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(359, 337);
+            this.gMapControl1.Size = new System.Drawing.Size(408, 365);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 0D;
             // 
@@ -65,11 +64,9 @@
             this.gMapControl2.CanDragMap = true;
             this.gMapControl2.GrayScaleMode = false;
             this.gMapControl2.LevelsKeepInMemmory = 5;
-            this.gMapControl2.Location = new System.Drawing.Point(38, 35);
+            this.gMapControl2.Location = new System.Drawing.Point(12, 19);
             this.gMapControl2.MarkersEnabled = true;
-            this.gMapControl2.MaximumSize = new System.Drawing.Size(360, 337);
             this.gMapControl2.MaxZoom = 2;
-            this.gMapControl2.MinimumSize = new System.Drawing.Size(360, 337);
             this.gMapControl2.MinZoom = 2;
             this.gMapControl2.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMapControl2.Name = "gMapControl2";
@@ -78,7 +75,7 @@
             this.gMapControl2.RetryLoadTile = 0;
             this.gMapControl2.RoutesEnabled = true;
             this.gMapControl2.ShowTileGridLines = false;
-            this.gMapControl2.Size = new System.Drawing.Size(177, 202);
+            this.gMapControl2.Size = new System.Drawing.Size(295, 276);
             this.gMapControl2.TabIndex = 1;
             this.gMapControl2.Zoom = 0D;
             // 
@@ -87,20 +84,18 @@
             this.groupBox1.Controls.Add(this.gMapControl1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 392);
+            this.groupBox1.Size = new System.Drawing.Size(420, 390);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.gMapControl2);
-            this.groupBox2.Location = new System.Drawing.Point(528, 31);
+            this.groupBox2.Location = new System.Drawing.Point(438, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(348, 300);
+            this.groupBox2.Size = new System.Drawing.Size(307, 301);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // Form1
             // 
