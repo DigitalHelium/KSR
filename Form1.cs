@@ -20,6 +20,11 @@ namespace KSR
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //map1Init();
+            map2Init();
+        }
+        public void map1Init()
+        {
             //Настройки для компонента GMap.
             gMapControl1.Bearing = 0;
 
@@ -81,19 +86,49 @@ namespace KSR
             //Если вы используете интернет через прокси сервер,
             //указываем свои учетные данные.
             GMap.NET.MapProviders.GMapProvider.WebProxy = System.Net.WebRequest.GetSystemWebProxy();
-            GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials =System.Net.CredentialCache.DefaultCredentials;
-            GMap.NET.WindowsForms.GMapOverlay markersOverlay =new GMap.NET.WindowsForms.GMapOverlay(gMapControl1, "marker");
+            GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+            GMap.NET.WindowsForms.GMapOverlay markersOverlay = new GMap.NET.WindowsForms.GMapOverlay(gMapControl1, "marker");
 
             gMapControl1.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             //Инициализация нового ЗЕЛЕНОГО маркера, с указанием его координат
-            GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker =new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
-            marker.ToolTip =new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
+            GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
+            marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
             //Текст отображаемый при наведении на маркер
             marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
             //Добавляем маркер в список маркеров
             markersOverlay.Markers.Add(marker);
             //Добавляем в компонент, список маркеров
             gMapControl1.Overlays.Add(markersOverlay);
+        }
+        public void map2Init()
+        {
+            gMapControl2.Location = ;
+            gMapControl2.Bearing = 0;
+            gMapControl2.CanDragMap = true;
+            gMapControl2.DragButton = MouseButtons.Left;
+            gMapControl2.GrayScaleMode = true;
+            gMapControl2.MarkersEnabled = true;
+            gMapControl2.MaxZoom = 20;
+            gMapControl2.MinZoom = 16;
+            gMapControl2.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            gMapControl2.NegativeMode = false;
+            gMapControl2.PolygonsEnabled = true;
+            gMapControl2.RoutesEnabled = true;
+            gMapControl2.ShowTileGridLines = false;
+            gMapControl2.Zoom = 18;
+            gMapControl2.Dock = DockStyle.Fill;
+            gMapControl2.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
+            GMap.NET.GMaps.Instance.Mode =GMap.NET.AccessMode.ServerOnly;
+            GMap.NET.MapProviders.GMapProvider.WebProxy = System.Net.WebRequest.GetSystemWebProxy();
+            GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+            GMap.NET.WindowsForms.GMapOverlay markersOverlay = new GMap.NET.WindowsForms.GMapOverlay(gMapControl2, "marker");
+
+            gMapControl2.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
+            GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
+            marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
+            marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
+            markersOverlay.Markers.Add(marker);
+            gMapControl2.Overlays.Add(markersOverlay);
         }
     }
 }
