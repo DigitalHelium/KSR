@@ -54,9 +54,5 @@ namespace KSR
             get { return isElectric; }
             set { isElectric = value; }
         }
-
-
-
-
     }
 }
