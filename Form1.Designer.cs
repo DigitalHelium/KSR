@@ -40,7 +40,9 @@
             this.gMapControl1.LevelsKeepInMemmory = 5;
             this.gMapControl1.Location = new System.Drawing.Point(12, 12);
             this.gMapControl1.MarkersEnabled = true;
+            this.gMapControl1.MaximumSize = new System.Drawing.Size(359, 337);
             this.gMapControl1.MaxZoom = 2;
+            this.gMapControl1.MinimumSize = new System.Drawing.Size(359, 337);
             this.gMapControl1.MinZoom = 2;
             this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMapControl1.Name = "gMapControl1";
@@ -49,7 +51,7 @@
             this.gMapControl1.RetryLoadTile = 0;
             this.gMapControl1.RoutesEnabled = true;
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(74, 69);
+            this.gMapControl1.Size = new System.Drawing.Size(359, 337);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 0D;
             // 
