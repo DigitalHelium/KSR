@@ -1,4 +1,6 @@
-﻿namespace KSR
+﻿using System.Threading;
+
+namespace KSR
 {
     partial class Form1
     {
@@ -19,6 +21,8 @@
             }
             base.Dispose(disposing);
         }
+
+        private Thread myThread;
 
         #region Код, автоматически созданный конструктором форм Windows
 

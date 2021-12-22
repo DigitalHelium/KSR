@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GMap.NET.WindowsForms;
@@ -89,9 +90,10 @@ namespace KSR
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
             GMap.NET.WindowsForms.GMapOverlay markersOverlay = new GMap.NET.WindowsForms.GMapOverlay(gMapControl1, "marker");
 
+            myThread = new Thread(new ParameterizedThreadStart(goTransport));
             gMapControl1.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             //Инициализация нового ЗЕЛЕНОГО маркера, с указанием его координат
-            GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
+            GMapMarker marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
             marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
             //Текст отображаемый при наведении на маркер
             marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
@@ -99,6 +101,7 @@ namespace KSR
             markersOverlay.Markers.Add(marker);
             //Добавляем в компонент, список маркеров
             gMapControl1.Overlays.Add(markersOverlay);
+            myThread.Start(marker);
         }
         public void map2Init()
         {
@@ -129,6 +132,16 @@ namespace KSR
             marker.ToolTipText = "ул.Красно-\nармейская х\n ул.Галакти-\nоновская";
             markersOverlay.Markers.Add(marker);
             gMapControl2.Overlays.Add(markersOverlay);
+        }
+
+        public void goTransport(Object obj)
+        {
+            GMapMarker marker = (GMapMarker)obj;
+            for (int i = 1; i < 100; i++)
+            {
+                Thread.Sleep(100);
+                marker.Position = new GMap.NET.PointLatLng(marker.Position.Lat + 0.00001, marker.Position.Lng + 0.00001);
+            }
         }
     }
 }
