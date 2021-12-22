@@ -18,6 +18,7 @@ namespace KSR
         private PointLatLng nullPosition; // Начальные координаты
         private PointLatLng currentPosition; // Текущие координаты
         private PointLatLng oldPosition; // Конечные координаты
+        private DateTime dateNull = new DateTime();
 
         public Transport (TransportType transportType, bool isElectric, double speed, double polution, PointLatLng nullPosition, PointLatLng oldPosition)
         {

@@ -101,6 +101,7 @@ namespace KSR
             //markersOverlay.Markers.Add(marker);
             //Добавляем в компонент, список маркеров
             //gMapControl1.Overlays.Add(markersOverlay);
+            
 
  
         }
@@ -138,16 +139,28 @@ namespace KSR
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            time += timer1.Interval;
+            Console.WriteLine(time);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            timer1.Start();
             Console.WriteLine("hi!");
             MainHandler handler = new MainHandler(24, timer1, gMapControl1, markersOverlayMap1);
             Thread handlerThread = new Thread(new ThreadStart(handler.run));
             handlerThread.Start();
             //timer1.Start();
+        }
+
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gMapControl2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
