@@ -90,11 +90,11 @@ namespace KSR
             //указываем свои учетные данные.
             GMap.NET.MapProviders.GMapProvider.WebProxy = System.Net.WebRequest.GetSystemWebProxy();
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
-            markersOverlayMap1 = new GMap.NET.WindowsForms.GMapOverlay(gMapControl1, "marker");
+            markersOverlayMap1 = new GMap.NET.WindowsForms.GMapOverlay( "marker");
 
             gMapControl1.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             //Инициализация нового ЗЕЛЕНОГО маркера, с указанием его координат
-            GMapMarker marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
+            GMapMarker marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(53.192875, 50.102905),GMap.NET.WindowsForms.Markers.GMarkerGoogleType.green);
             marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
             //Текст отображаемый при наведении на маркер
             marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
@@ -129,7 +129,7 @@ namespace KSR
             GMap.NET.GMaps.Instance.Mode =GMap.NET.AccessMode.ServerOnly;
             GMap.NET.MapProviders.GMapProvider.WebProxy = System.Net.WebRequest.GetSystemWebProxy();
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
-            markersOverlayMap2 = new GMap.NET.WindowsForms.GMapOverlay(gMapControl2, "marker");
+            markersOverlayMap2 = new GMap.NET.WindowsForms.GMapOverlay("marker");
             /*
             GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
             marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);

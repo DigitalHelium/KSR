@@ -1,7 +1,9 @@
 ﻿using GMap.NET;
+using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace KSR
 {
@@ -35,7 +37,8 @@ namespace KSR
             //this.timeSpeed= cordsToMeters(OldPosition.Lat, OldPosition.Lng, NullPosition.Lat, NullPosition.Lng)/(speed*1000/3600);
             Console.WriteLine(timeSpeed);
             currentPosition = nullPosition;
-            marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(currentPosition);
+            marker = new GMarkerGoogle(currentPosition,new Bitmap("bus.png"));
+            //marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(currentPosition);
         }
 
         public GMapMarker Marker { get => marker; set => marker = value; }
