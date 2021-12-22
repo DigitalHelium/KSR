@@ -14,6 +14,7 @@ namespace KSR
         private bool isElectric; // Тип двигателя
         private double speed; // Скорость (км/ч)
         private double polution; // Выбросы
+        private double timeSpeed;
         private PointLatLng nullPosition; // Начальные координаты
         private PointLatLng currentPosition; // Текущие координаты
         private PointLatLng oldPosition; // Конечные координаты
@@ -26,7 +27,11 @@ namespace KSR
             this.polution = polution;
             this.nullPosition = nullPosition;
             this.oldPosition = oldPosition;
-
+            this.currentPosition = nullPosition;
+            double x = oldPosition.Lat - nullPosition.Lat;
+            double y = oldPosition.Lng - nullPosition.Lng;
+            this.timeSpeed = Math.Sqrt(x + y) / speed;
+            Console.WriteLine(timeSpeed);
             currentPosition = nullPosition;
             marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(currentPosition);
         }
@@ -35,6 +40,7 @@ namespace KSR
         public TransportType TransportType { get => transportType; set => transportType = value; }
         public bool IsElectric { get => isElectric; set => isElectric = value; }
         public double Speed { get => speed; set => speed = value; }
+        public double TimeSpeed { get => timeSpeed; set => speed = value; }
         public double Polution { get => polution; set => polution = value; }
         public PointLatLng NullPosition { get => nullPosition; set => nullPosition = value; }
         public PointLatLng CurrentPosition { get => currentPosition; set => currentPosition = value; }
