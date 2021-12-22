@@ -23,6 +23,8 @@ namespace KSR
             base.Dispose(disposing);
         }
 
+        private int time;
+
         #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace KSR
             this.gMapControl1.Size = new System.Drawing.Size(408, 365);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
             // gMapControl2
             // 
@@ -84,6 +87,7 @@ namespace KSR
             this.gMapControl2.Size = new System.Drawing.Size(295, 276);
             this.gMapControl2.TabIndex = 1;
             this.gMapControl2.Zoom = 0D;
+            this.gMapControl2.Load += new System.EventHandler(this.gMapControl2_Load);
             // 
             // groupBox1
             // 
@@ -105,6 +109,7 @@ namespace KSR
             // 
             // timer1
             // 
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // button1
