@@ -15,6 +15,7 @@ namespace KSR
     public partial class Form1 : Form
     {
         private GMap.NET.WindowsForms.GMapOverlay markersOverlayMap1;
+        private GMap.NET.WindowsForms.GMapOverlay markersOverlayMap2;
         public Form1()
         {
             InitializeComponent();
@@ -93,14 +94,14 @@ namespace KSR
 
             gMapControl1.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             //Инициализация нового ЗЕЛЕНОГО маркера, с указанием его координат
-            //GMapMarker marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
-            //marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
+            GMapMarker marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
+            marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
             //Текст отображаемый при наведении на маркер
-            //marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
+            marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
             //Добавляем маркер в список маркеров
-            //markersOverlay.Markers.Add(marker);
+            markersOverlayMap1.Markers.Add(marker);
             //Добавляем в компонент, список маркеров
-            //gMapControl1.Overlays.Add(markersOverlay);
+            gMapControl1.Overlays.Add(markersOverlayMap1);
             
 
  
@@ -128,13 +129,13 @@ namespace KSR
             GMap.NET.GMaps.Instance.Mode =GMap.NET.AccessMode.ServerOnly;
             GMap.NET.MapProviders.GMapProvider.WebProxy = System.Net.WebRequest.GetSystemWebProxy();
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
-            GMap.NET.WindowsForms.GMapOverlay markersOverlay = new GMap.NET.WindowsForms.GMapOverlay(gMapControl2, "marker");
-
+            markersOverlayMap2 = new GMap.NET.WindowsForms.GMapOverlay(gMapControl2, "marker");
+            /*
             GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
             marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
             marker.ToolTipText = "ул.Красно-\nармейская х\n ул.Галакти-\nоновская";
-            markersOverlay.Markers.Add(marker);
-            gMapControl2.Overlays.Add(markersOverlay);
+            markersOverlayMap2.Markers.Add(marker);
+            gMapControl2.Overlays.Add(markersOverlayMap2);*/
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -147,7 +148,7 @@ namespace KSR
         {
             timer1.Start();
             Console.WriteLine("hi!");
-            MainHandler handler = new MainHandler(24, timer1, gMapControl1, markersOverlayMap1);
+            MainHandler handler = new MainHandler(24, timer1, gMapControl2, markersOverlayMap2);
             Thread handlerThread = new Thread(new ThreadStart(handler.run));
             handlerThread.Start();
             //timer1.Start();

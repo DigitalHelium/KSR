@@ -31,7 +31,7 @@ namespace KSR
             this.currentPosition = nullPosition;
             double x = oldPosition.Lat - nullPosition.Lat;
             double y = oldPosition.Lng - nullPosition.Lng;
-            this.timeSpeed = Math.Sqrt(x + y) / speed;
+            this.timeSpeed = Math.Sqrt(Math.Pow(x,2) + Math.Pow(y,2)) / speed;
             //this.timeSpeed= cordsToMeters(OldPosition.Lat, OldPosition.Lng, NullPosition.Lat, NullPosition.Lng)/(speed*1000/3600);
             Console.WriteLine(timeSpeed);
             currentPosition = nullPosition;
