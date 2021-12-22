@@ -101,6 +101,7 @@ namespace KSR
             //markersOverlay.Markers.Add(marker);
             //Добавляем в компонент, список маркеров
             //gMapControl1.Overlays.Add(markersOverlay);
+            
 
  
         }
