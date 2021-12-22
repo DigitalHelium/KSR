@@ -23,7 +23,7 @@ namespace KSR
         bool stopOrRun;
 
         static Random rnd = new Random();
-        public StreamVehicles(String type, double lengthOfRoad, int k, int G)
+        public VehicleStream(String type, double lengthOfRoad, int k, int G)
         {
             switch (type)
             {
@@ -47,7 +47,7 @@ namespace KSR
             this.G = G;
         }
 
-        public StreamVehicles(String type, int timeOfCycle, int numberOfCycle, int k, int G)
+        public VehicleStream(String type, int timeOfCycle, int numberOfCycle, int k, int G)
         {
             stopOrRun = false;
             switch (type)
