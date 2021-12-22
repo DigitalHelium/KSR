@@ -14,6 +14,7 @@ namespace KSR
 {
     public partial class Form1 : Form
     {
+        private GMap.NET.WindowsForms.GMapOverlay markersOverlayMap1;
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +22,8 @@ namespace KSR
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            map1Init();
+            map2Init();
         }
         public void map1Init()
         {
@@ -86,7 +89,7 @@ namespace KSR
             //указываем свои учетные данные.
             GMap.NET.MapProviders.GMapProvider.WebProxy = System.Net.WebRequest.GetSystemWebProxy();
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
-            GMap.NET.WindowsForms.GMapOverlay markersOverlay = new GMap.NET.WindowsForms.GMapOverlay(gMapControl1, "marker");
+            markersOverlayMap1 = new GMap.NET.WindowsForms.GMapOverlay(gMapControl1, "marker");
 
             gMapControl1.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             //Инициализация нового ЗЕЛЕНОГО маркера, с указанием его координат
@@ -99,16 +102,16 @@ namespace KSR
             //Добавляем в компонент, список маркеров
             //gMapControl1.Overlays.Add(markersOverlay);
 
-            MainHandler handler = new MainHandler(24, timer1, gMapControl1, markersOverlay);
-            Thread handlerThread = new Thread(new ThreadStart(handler.run));
-            handlerThread.Start();
+ 
         }
         public void map2Init()
         {
             //gMapControl2.Location = new System.Drawing.Point(538, 12);
+            
+            gMapControl2.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             gMapControl2.Bearing = 0;
-            //gMapControl2.CanDragMap = true;
-            //gMapControl2.DragButton = MouseButtons.Left;
+            gMapControl2.CanDragMap = true;
+            gMapControl2.DragButton = MouseButtons.Left;
             gMapControl2.GrayScaleMode = true;
             gMapControl2.MarkersEnabled = true;
             gMapControl2.MaxZoom = 20;
@@ -126,7 +129,6 @@ namespace KSR
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
             GMap.NET.WindowsForms.GMapOverlay markersOverlay = new GMap.NET.WindowsForms.GMapOverlay(gMapControl2, "marker");
 
-            gMapControl2.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
             marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
             marker.ToolTipText = "ул.Красно-\nармейская х\n ул.Галакти-\nоновская";
@@ -142,8 +144,9 @@ namespace KSR
         private void button1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("hi!");
-            map1Init();
-            map2Init();
+            MainHandler handler = new MainHandler(24, timer1, gMapControl1, markersOverlayMap1);
+            Thread handlerThread = new Thread(new ThreadStart(handler.run));
+            handlerThread.Start();
             //timer1.Start();
         }
     }
