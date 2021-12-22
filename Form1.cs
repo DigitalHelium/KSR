@@ -21,8 +21,6 @@ namespace KSR
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            map1Init();
-            map2Init();
         }
         public void map1Init()
         {
@@ -90,18 +88,20 @@ namespace KSR
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
             GMap.NET.WindowsForms.GMapOverlay markersOverlay = new GMap.NET.WindowsForms.GMapOverlay(gMapControl1, "marker");
 
-            myThread = new Thread(new ParameterizedThreadStart(goTransport));
             gMapControl1.Position = new GMap.NET.PointLatLng(53.192875, 50.102905);
             //Инициализация нового ЗЕЛЕНОГО маркера, с указанием его координат
-            GMapMarker marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
-            marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
+            //GMapMarker marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
+            //marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
             //Текст отображаемый при наведении на маркер
-            marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
+            //marker.ToolTipText = "ул. Красноармейская х ул. Галактионовская";
             //Добавляем маркер в список маркеров
-            markersOverlay.Markers.Add(marker);
+            //markersOverlay.Markers.Add(marker);
             //Добавляем в компонент, список маркеров
-            gMapControl1.Overlays.Add(markersOverlay);
-            myThread.Start(marker);
+            //gMapControl1.Overlays.Add(markersOverlay);
+
+            MainHandler handler = new MainHandler(24, timer1, gMapControl1, markersOverlay);
+            Thread handlerThread = new Thread(new ThreadStart(handler.run));
+            handlerThread.Start();
         }
         public void map2Init()
         {
@@ -134,14 +134,17 @@ namespace KSR
             gMapControl2.Overlays.Add(markersOverlay);
         }
 
-        public void goTransport(Object obj)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            GMapMarker marker = (GMapMarker)obj;
-            for (int i = 1; i < 100; i++)
-            {
-                Thread.Sleep(100);
-                marker.Position = new GMap.NET.PointLatLng(marker.Position.Lat + 0.00001, marker.Position.Lng + 0.00001);
-            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("hi!");
+            map1Init();
+            map2Init();
+            //timer1.Start();
         }
     }
 }
