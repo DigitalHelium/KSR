@@ -40,6 +40,7 @@ namespace KSR
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -48,19 +49,24 @@ namespace KSR
             // 
             this.gMapControl1.Bearing = 0F;
             this.gMapControl1.CanDragMap = true;
+            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
             this.gMapControl1.GrayScaleMode = false;
+            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
             this.gMapControl1.Location = new System.Drawing.Point(6, 19);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinimumSize = new System.Drawing.Size(359, 337);
             this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomEnabled = true;
             this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMapControl1.Name = "gMapControl1";
             this.gMapControl1.NegativeMode = false;
             this.gMapControl1.PolygonsEnabled = true;
             this.gMapControl1.RetryLoadTile = 0;
             this.gMapControl1.RoutesEnabled = true;
+            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
             this.gMapControl1.Size = new System.Drawing.Size(408, 365);
             this.gMapControl1.TabIndex = 0;
@@ -71,18 +77,23 @@ namespace KSR
             // 
             this.gMapControl2.Bearing = 0F;
             this.gMapControl2.CanDragMap = true;
+            this.gMapControl2.EmptyTileColor = System.Drawing.Color.Navy;
             this.gMapControl2.GrayScaleMode = false;
+            this.gMapControl2.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl2.LevelsKeepInMemmory = 5;
             this.gMapControl2.Location = new System.Drawing.Point(12, 19);
             this.gMapControl2.MarkersEnabled = true;
             this.gMapControl2.MaxZoom = 2;
             this.gMapControl2.MinZoom = 2;
+            this.gMapControl2.MouseWheelZoomEnabled = true;
             this.gMapControl2.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMapControl2.Name = "gMapControl2";
             this.gMapControl2.NegativeMode = false;
             this.gMapControl2.PolygonsEnabled = true;
             this.gMapControl2.RetryLoadTile = 0;
             this.gMapControl2.RoutesEnabled = true;
+            this.gMapControl2.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl2.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl2.ShowTileGridLines = false;
             this.gMapControl2.Size = new System.Drawing.Size(295, 276);
             this.gMapControl2.TabIndex = 1;
@@ -122,11 +133,22 @@ namespace KSR
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(572, 382);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 511);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -136,6 +158,7 @@ namespace KSR
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,6 +170,7 @@ namespace KSR
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
