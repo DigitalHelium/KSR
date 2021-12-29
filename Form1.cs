@@ -157,12 +157,24 @@ namespace KSR
             int n1 = Int32.Parse(textBox2.Text);
             int m = Int32.Parse(textBox3.Text);
             int m1 = Int32.Parse(textBox4.Text);
-            int G = Int32.Parse(textBox5.Text);
-            int Cycle = Int32.Parse(textBox10.Text);
+            int G1 = Int32.Parse(textBox5.Text);
+            int G2 = Int32.Parse(textBox17.Text);
+            int G3 = Int32.Parse(textBox18.Text);
+            int G4 = Int32.Parse(textBox19.Text);
+            int G5 = Int32.Parse(textBox20.Text);
+            int G6 = Int32.Parse(textBox21.Text);
+            int G7 = Int32.Parse(textBox22.Text);
+            int G8 = Int32.Parse(textBox23.Text);
+            int Cycle = Int32.Parse(textBox1.Text);
             int countCycle = Int32.Parse(textBox9.Text);
-            int k = Int32.Parse(textBox8.Text);
-            Simulation s = new Simulation(n,n1,m,1,G,Cycle,countCycle,k);
-            textBox6.Text = s.startModeling().ToString();
+            int length = Int32.Parse(textBox14.Text);
+            int k1 = Int32.Parse(textBox8.Text);
+            int k2 = Int32.Parse(textBox7.Text);
+            int k3 = Int32.Parse(textBox11.Text);
+            int k4 = Int32.Parse(textBox12.Text);
+            string[] threads = textBox13.Text.Split(' ');
+            Simulation s = new Simulation(n,n1,m,m1,Cycle,G1,G2,G3,G4,G5,G6,G7,G8,countCycle,k1,k2,k3,k4,length);
+            textBox6.Text = s.startModeling(threads[0], threads[1], threads[2], threads[3], threads[4], threads[5], threads[6], threads[7]).ToString();
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
@@ -196,6 +208,11 @@ namespace KSR
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
