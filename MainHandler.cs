@@ -21,7 +21,7 @@ namespace KSR
         private Random random = new Random();
         private GMap.NET.PointLatLng nullpos;
         private GMap.NET.PointLatLng oldpos;
-        private TrafficType trafficType;
+        private StateLight trafficType;
         private TrafficLight trafficLight;
 
         public MainHandler(int seed,int FPS, Timer timer, GMapControl map, GMapOverlay markers, GMap.NET.PointLatLng nullpos, GMap.NET.PointLatLng oldpos, TrafficType trafficType, TrafficLight trafficLight)
@@ -43,43 +43,45 @@ namespace KSR
         {
             while (!isFinish)
             {
-                // Обрабатываем существующие машины
-                if (transports.Count != 0)
-                {
-                    for (int i=0; i < transports.Count; i++)
+                if (trafficLight.CurruntState == trafficType)
+                    // Обрабатываем существующие машины
+                    if (transports.Count != 0)
                     {
-                        // Обновляем координаты существующих машин
-                        Transport transport = transports.ElementAt(i);
-                        transport.updatePosition(FPS);
-
-                        // Удаление транспорта при преодоление дистанции
+                        for (int i = 0; i < transports.Count; i++)
                         {
-                            if (transport.NullPosition.Lng < transport.OldPosition.Lng)
-                            {
-                                if (transport.NullPosition.Lat < transport.OldPosition.Lat)
-                                {
-                                    if (transport.CurrentPosition.Lng >= transport.OldPosition.Lng && transport.CurrentPosition.Lat >= transport.OldPosition.Lat)
-                                        delTransport(transport);
+                            // Обновляем координаты существующих машин
+                            Transport transport = transports.ElementAt(i);
+                            transport.updatePosition(FPS);
 
+                            // Удаление транспорта при преодоление дистанции
+                            {
+                                if (transport.NullPosition.Lng < transport.OldPosition.Lng)
+                                {
+                                    if (transport.NullPosition.Lat < transport.OldPosition.Lat)
+                                    {
+                                        if (transport.CurrentPosition.Lng >= transport.OldPosition.Lng && transport.CurrentPosition.Lat >= transport.OldPosition.Lat)
+                                            delTransport(transport);
+
+                                    }
+                                    else
+                                    {
+                                        if (transport.CurrentPosition.Lng >= transport.OldPosition.Lng && transport.CurrentPosition.Lat <= transport.NullPosition.Lat)
+                                            delTransport(transport);
+                                    }
                                 }
                                 else
                                 {
-                                    if (transport.CurrentPosition.Lng >= transport.OldPosition.Lng && transport.CurrentPosition.Lat <= transport.NullPosition.Lat)
-                                        delTransport(transport);
-                                }
-                            }
-                            else
-                            {
-                                if (transport.NullPosition.Lat < transport.OldPosition.Lat)
-                                {
-                                    if (transport.CurrentPosition.Lng <= transport.OldPosition.Lng && transport.CurrentPosition.Lat >= transport.OldPosition.Lat)
-                                        delTransport(transport);
+                                    if (transport.NullPosition.Lat < transport.OldPosition.Lat)
+                                    {
+                                        if (transport.CurrentPosition.Lng <= transport.OldPosition.Lng && transport.CurrentPosition.Lat >= transport.OldPosition.Lat)
+                                            delTransport(transport);
 
-                                }
-                                else
-                                {
-                                    if (transport.CurrentPosition.Lng <= transport.OldPosition.Lng && transport.CurrentPosition.Lat <= transport.NullPosition.Lat)
-                                        delTransport(transport);
+                                    }
+                                    else
+                                    {
+                                        if (transport.CurrentPosition.Lng <= transport.OldPosition.Lng && transport.CurrentPosition.Lat <= transport.NullPosition.Lat)
+                                            delTransport(transport);
+                                    }
                                 }
                             }
                         }
