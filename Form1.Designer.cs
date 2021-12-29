@@ -62,8 +62,6 @@ namespace KSR
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -94,7 +92,7 @@ namespace KSR
             this.gMapControl2.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl2.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl2.ShowTileGridLines = false;
-            this.gMapControl2.Size = new System.Drawing.Size(295, 276);
+            this.gMapControl2.Size = new System.Drawing.Size(365, 368);
             this.gMapControl2.TabIndex = 1;
             this.gMapControl2.Zoom = 0D;
             this.gMapControl2.Load += new System.EventHandler(this.gMapControl2_Load);
@@ -104,7 +102,7 @@ namespace KSR
             this.groupBox2.Controls.Add(this.gMapControl2);
             this.groupBox2.Location = new System.Drawing.Point(12, 9);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(307, 301);
+            this.groupBox2.Size = new System.Drawing.Size(371, 384);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -116,7 +114,7 @@ namespace KSR
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(779, 444);
+            this.button1.Location = new System.Drawing.Point(389, 364);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -127,7 +125,7 @@ namespace KSR
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(697, 287);
+            this.label1.Location = new System.Drawing.Point(461, 291);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 13);
             this.label1.TabIndex = 5;
@@ -136,7 +134,7 @@ namespace KSR
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(575, 16);
+            this.textBox1.Location = new System.Drawing.Point(696, 13);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
@@ -145,7 +143,7 @@ namespace KSR
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(575, 41);
+            this.textBox2.Location = new System.Drawing.Point(696, 38);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 7;
@@ -154,7 +152,7 @@ namespace KSR
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(575, 70);
+            this.textBox3.Location = new System.Drawing.Point(696, 67);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 8;
@@ -162,7 +160,7 @@ namespace KSR
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(575, 100);
+            this.textBox4.Location = new System.Drawing.Point(696, 97);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 9;
@@ -170,7 +168,7 @@ namespace KSR
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(575, 193);
+            this.textBox8.Location = new System.Drawing.Point(696, 190);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 13;
@@ -178,7 +176,7 @@ namespace KSR
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(575, 149);
+            this.textBox9.Location = new System.Drawing.Point(696, 146);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 12;
@@ -186,7 +184,7 @@ namespace KSR
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(575, 171);
+            this.textBox10.Location = new System.Drawing.Point(696, 168);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 11;
@@ -195,7 +193,7 @@ namespace KSR
             // n
             // 
             this.n.AutoSize = true;
-            this.n.Location = new System.Drawing.Point(351, 19);
+            this.n.Location = new System.Drawing.Point(461, 13);
             this.n.Name = "n";
             this.n.Size = new System.Drawing.Size(232, 13);
             this.n.TabIndex = 16;
@@ -204,7 +202,7 @@ namespace KSR
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(351, 42);
+            this.label3.Location = new System.Drawing.Point(461, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(235, 13);
             this.label3.TabIndex = 17;
@@ -214,7 +212,7 @@ namespace KSR
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(351, 62);
+            this.label4.Location = new System.Drawing.Point(461, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(154, 26);
             this.label4.TabIndex = 18;
@@ -223,7 +221,7 @@ namespace KSR
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(351, 94);
+            this.label5.Location = new System.Drawing.Point(461, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(160, 26);
             this.label5.TabIndex = 19;
@@ -232,7 +230,7 @@ namespace KSR
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(351, 198);
+            this.label6.Location = new System.Drawing.Point(461, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(158, 13);
             this.label6.TabIndex = 23;
@@ -241,7 +239,7 @@ namespace KSR
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(351, 176);
+            this.label7.Location = new System.Drawing.Point(461, 170);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 13);
             this.label7.TabIndex = 22;
@@ -250,7 +248,7 @@ namespace KSR
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(351, 154);
+            this.label8.Location = new System.Drawing.Point(461, 148);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 13);
             this.label8.TabIndex = 21;
@@ -259,7 +257,7 @@ namespace KSR
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(921, 284);
+            this.textBox6.Location = new System.Drawing.Point(696, 294);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 24;
@@ -267,7 +265,7 @@ namespace KSR
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(351, 219);
+            this.label2.Location = new System.Drawing.Point(461, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 13);
             this.label2.TabIndex = 26;
@@ -275,7 +273,7 @@ namespace KSR
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(575, 214);
+            this.textBox7.Location = new System.Drawing.Point(696, 211);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 25;
@@ -284,7 +282,7 @@ namespace KSR
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(351, 241);
+            this.label10.Location = new System.Drawing.Point(461, 235);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(158, 13);
             this.label10.TabIndex = 28;
@@ -292,7 +290,7 @@ namespace KSR
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(575, 236);
+            this.textBox11.Location = new System.Drawing.Point(696, 233);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(100, 20);
             this.textBox11.TabIndex = 27;
@@ -301,7 +299,7 @@ namespace KSR
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(351, 266);
+            this.label11.Location = new System.Drawing.Point(461, 260);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(158, 13);
             this.label11.TabIndex = 30;
@@ -309,33 +307,16 @@ namespace KSR
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(575, 261);
+            this.textBox12.Location = new System.Drawing.Point(696, 258);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(100, 20);
             this.textBox12.TabIndex = 29;
             this.textBox12.Text = "150";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(712, 214);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 13);
-            this.label12.TabIndex = 53;
-            this.label12.Text = "Типы всех 8ми потоков:";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(714, 241);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(320, 20);
-            this.textBox13.TabIndex = 54;
-            this.textBox13.Text = "Light Light Hard Light Light Light Hard Hard";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(351, 128);
+            this.label13.Location = new System.Drawing.Point(461, 122);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(98, 13);
             this.label13.TabIndex = 56;
@@ -343,7 +324,7 @@ namespace KSR
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(577, 126);
+            this.textBox14.Location = new System.Drawing.Point(696, 122);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(100, 20);
             this.textBox14.TabIndex = 55;
@@ -351,9 +332,9 @@ namespace KSR
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(456, 352);
+            this.pictureBox1.Location = new System.Drawing.Point(383, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(72, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
@@ -367,12 +348,10 @@ namespace KSR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 558);
+            this.ClientSize = new System.Drawing.Size(809, 451);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.label10);
@@ -434,8 +413,6 @@ namespace KSR
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.PictureBox pictureBox1;
