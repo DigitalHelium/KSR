@@ -35,7 +35,31 @@ namespace KSR
 
         public void update(int time)
         {
-
+            if (curruntState == StateLight.yellow)
+            {
+                if (time - nullTime > calldownYellow)
+                {
+                    curruntState = StateLight.red;
+                    nullTime = time;
+                    
+                }
+            }
+            else if (curruntState == StateLight.red)
+            {
+                if(time - nullTime > calldown)
+                {
+                    curruntState = StateLight.green;
+                    nullTime = time;
+                }
+            }
+            else if (curruntState == StateLight.green)
+            {
+                if (time - nullTime > calldown)
+                {
+                    curruntState = StateLight.yellow;
+                    nullTime = time;
+                }
+            }
         }
 
         public StateLight CurruntState { get => curruntState; set => curruntState = value; }
