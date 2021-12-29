@@ -71,7 +71,7 @@ namespace KSR
             
 
                 // Создаем новые машины
-                if(generation.canNewTransport(timer.Time)) 
+                if(generation.canNewTransport(timer.Time)&&(transports.Count<5)) 
                 {
                     int rand = random.Next(15, 40);
                     //Console.WriteLine(rand);
