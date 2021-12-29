@@ -68,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="Timer.cs" />
+    <Compile Include="TrafficLight.cs" />
     <Compile Include="Transport.cs" />
     <Compile Include="VehicleStream.cs" />
     <EmbeddedResource Include="Form1.resx">
