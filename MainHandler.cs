@@ -24,7 +24,7 @@ namespace KSR
         private StateLight trafficType;
         private TrafficLight trafficLight;
 
-        public MainHandler(int seed,int FPS, Timer timer, GMapControl map, GMapOverlay markers, GMap.NET.PointLatLng nullpos, GMap.NET.PointLatLng oldpos, TrafficType trafficType, TrafficLight trafficLight)
+        public MainHandler(int seed,int FPS, Timer timer, GMapControl map, GMapOverlay markers, GMap.NET.PointLatLng nullpos, GMap.NET.PointLatLng oldpos, StateLight trafficType, TrafficLight trafficLight)
         {
             this.FPS = FPS;
             this.timer = timer;
@@ -43,7 +43,7 @@ namespace KSR
         {
             while (!isFinish)
             {
-                if (trafficLight.CurruntState == trafficType)
+                if (trafficLight.CurruntState == trafficType) { 
                     // Обрабатываем существующие машины
                     if (transports.Count != 0)
                     {
@@ -87,6 +87,7 @@ namespace KSR
                         }
                     }
                 }
+            
 
                 // Создаем новые машины
                 if(generation.canNewTransport(timer.Time)) 

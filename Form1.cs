@@ -65,7 +65,7 @@ namespace KSR
 
             timer = new Timer();
             timer1.Start();
-            //Console.WriteLine("Start!");
+
             MainHandler handler = new MainHandler(200,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055), StateLight.green,);
             MainHandler handler1 = new MainHandler(300,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193137, 50.103062), new GMap.NET.PointLatLng(53.192639, 50.102758), StateLight.green,);
             MainHandler handler2 = new MainHandler(400,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192966, 50.102460), new GMap.NET.PointLatLng(53.192723, 50.103439), StateLight.red,);
