@@ -42,6 +42,18 @@ namespace KSR
             }
             return answ;
         }
+        public TransportType getTransportType()
+        {
+            int type = random.Next(1, 3);
+            switch (type)
+            {
+                case 1:return TransportType.bus;
+                    break;
+                case 2:return TransportType.car;
+                    break;
+                default:return TransportType.NaN;
+            }
+        }
 
 
     }

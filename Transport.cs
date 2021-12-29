@@ -9,7 +9,7 @@ using System.Device.Location;
 namespace KSR
 {
 
-    public enum TransportType { bus, car }
+    public enum TransportType { bus, car,NaN }
     public class Transport
     {
         private TransportType transportType; // Тип транспорта (Мотоцикл или Автомобиль)
@@ -24,7 +24,7 @@ namespace KSR
         private double timeDistanse; // Время прохождения пути (с)
         private GMapMarker marker; // Эксемляр транспорта на карте
 
-        public Transport (TransportType transportType, bool isElectric, double speed, double polution, PointLatLng nullPosition, PointLatLng oldPosition)
+        public Transport(TransportType transportType, bool isElectric, double speed, double polution, PointLatLng nullPosition, PointLatLng oldPosition)
         {
             this.transportType = transportType;
             this.isElectric = isElectric;
@@ -40,7 +40,13 @@ namespace KSR
             distanse = c1.GetDistanceTo(c2);
             // Расчет времени прохождения авто
             timeDistanse = distanse * 3600 / (speed * 1000);
-            marker = new GMarkerGoogle(currentPosition,new Bitmap("bus.png"));
+            switch(transportType){
+                case TransportType.bus: marker = new GMarkerGoogle(currentPosition, new Bitmap("bus.png"));
+                    break;
+                case TransportType.car:
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("car.png"));
+                    break;
+            }
         }
 
         public GMapMarker Marker { get => marker; set => marker = value; }

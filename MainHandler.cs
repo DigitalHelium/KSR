@@ -18,6 +18,7 @@ namespace KSR
         private GMapControl map;
         private GMapOverlay markers;
         private bool isFinish;
+        private Random random = new Random();
 
         public MainHandler(int FPS, Timer timer, GMapControl map, GMapOverlay markers)
         {
@@ -80,7 +81,10 @@ namespace KSR
                 // Создаем новые машины
                 if(generation.canNewTransport(timer.Time)) 
                 {
-                    Transport tr = new Transport(TransportType.car, false, 20, 1, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055));
+                    int rand = random.Next(15, 40);
+                    //Console.WriteLine(rand);
+                    
+                    Transport tr = new Transport(generation.getTransportType(), false, rand, 1, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055));
                     transports.Add(tr);
                     markers.Markers.Add(tr.Marker);
                     map.Overlays.Add(markers);
