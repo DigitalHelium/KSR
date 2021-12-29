@@ -96,10 +96,10 @@ namespace KSR
             timer1.Start();
             timer2.Start();
             //Console.WriteLine("Start!");
-            handler = new MainHandler(200,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192858, 50.102869));
-            handler1 = new MainHandler(300,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193137, 50.103062), new GMap.NET.PointLatLng(53.192639, 50.102758), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192913, 50.102936));
-            handler2 = new MainHandler(400,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192966, 50.102460), new GMap.NET.PointLatLng(53.192723, 50.103439), StateLight.red, trafficLight, new GMap.NET.PointLatLng(53.192896, 50.102802));
-            handler3 = new MainHandler(500,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192765, 50.103485), new GMap.NET.PointLatLng(53.193006, 50.102487), StateLight.red, trafficLight, new GMap.NET.PointLatLng(53.192886, 50.102961));
+            handler = new MainHandler(200,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192293, 50.102480), new GMap.NET.PointLatLng(53.193567, 50.103274), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192858, 50.102869));
+            handler1 = new MainHandler(300,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193554, 50.103318), new GMap.NET.PointLatLng(53.192323, 50.102542), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192913, 50.102936));
+            handler2 = new MainHandler(400,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193103, 50.101880), new GMap.NET.PointLatLng(53.192636, 50.103803), StateLight.red, trafficLight, new GMap.NET.PointLatLng(53.192896, 50.102802));
+            handler3 = new MainHandler(500,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192700, 50.103698), new GMap.NET.PointLatLng(53.193142, 50.101897), StateLight.red, trafficLight, new GMap.NET.PointLatLng(53.192886, 50.102961));
 
             Thread handlerThread = new Thread(new ThreadStart(handler.run));
             Thread handlerThread1 = new Thread(new ThreadStart(handler1.run));
@@ -140,7 +140,7 @@ namespace KSR
 
             int Cycle = Int32.Parse(textBox1.Text);
             int countCycle = Int32.Parse(textBox9.Text);
-            int length = Int32.Parse(textBox14.Text);
+            int length = 45;
             int k1 = Int32.Parse(textBox8.Text);
             int k2 = Int32.Parse(textBox7.Text);
             int k3 = Int32.Parse(textBox11.Text);

@@ -39,7 +39,7 @@ namespace KSR
             }
             stopOrRun = true;
             this.type = type;
-            int i = rnd.Next(0, 15);
+            int i = rnd.Next(10, 15);
             this.velocity = velocities[i];
             this.r = rs[i];
             this.lengthOfRoad = lengthOfRoad;
