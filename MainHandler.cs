@@ -21,8 +21,10 @@ namespace KSR
         private Random random = new Random();
         private GMap.NET.PointLatLng nullpos;
         private GMap.NET.PointLatLng oldpos;
+        private TrafficType trafficType;
+        private TrafficLight trafficLight;
 
-        public MainHandler(int seed,int FPS, Timer timer, GMapControl map, GMapOverlay markers, GMap.NET.PointLatLng nullpos, GMap.NET.PointLatLng oldpos)
+        public MainHandler(int seed,int FPS, Timer timer, GMapControl map, GMapOverlay markers, GMap.NET.PointLatLng nullpos, GMap.NET.PointLatLng oldpos, TrafficType trafficType, TrafficLight trafficLight)
         {
             this.FPS = FPS;
             this.timer = timer;
@@ -33,6 +35,8 @@ namespace KSR
             generation = new Generation(seed);
             transports = new List<Transport>();
             isFinish = false;
+            this.trafficLight = trafficLight;
+            this.trafficType = trafficType;
         }
         
         public void run()
