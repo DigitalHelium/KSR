@@ -19,14 +19,18 @@ namespace KSR
         private GMapOverlay markers;
         private bool isFinish;
         private Random random = new Random();
+        private GMap.NET.PointLatLng nullpos;
+        private GMap.NET.PointLatLng oldpos;
 
-        public MainHandler(int FPS, Timer timer, GMapControl map, GMapOverlay markers)
+        public MainHandler(int seed,int FPS, Timer timer, GMapControl map, GMapOverlay markers, GMap.NET.PointLatLng nullpos, GMap.NET.PointLatLng oldpos)
         {
             this.FPS = FPS;
             this.timer = timer;
             this.map = map;
             this.markers = markers;
-            generation = new Generation();
+            this.oldpos = oldpos;
+            this.nullpos = nullpos;
+            generation = new Generation(seed);
             transports = new List<Transport>();
             isFinish = false;
         }
@@ -83,8 +87,8 @@ namespace KSR
                 {
                     int rand = random.Next(15, 40);
                     //Console.WriteLine(rand);
-                    
-                    Transport tr = new Transport(generation.getTransportType(), false, rand, 1, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055));
+                    //Thread.Sleep(100);
+                    Transport tr = new Transport(generation.getTransportType(), false, rand, 1,nullpos,oldpos);
                     transports.Add(tr);
                     markers.Markers.Add(tr.Marker);
                     map.Overlays.Add(markers);

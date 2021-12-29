@@ -35,6 +35,7 @@ namespace KSR
 
         public void update(int time)
         {
+
         }
 
         public StateLight CurruntState { get => curruntState; set => curruntState = value; }

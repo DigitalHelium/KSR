@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace KSR
@@ -12,9 +13,11 @@ namespace KSR
         private int nullTime; // время появления последнего транспорта
         private bool isFree; // Доступен ли генератор для генерации задержки нового авто
         private int nextTime; // сколько должно пройти времени для появления следующего транспорта
-        public Generation()
+        private int seed;
+        public Generation(int seed)
         {
-            random = new Random();
+            this.seed = seed;
+            random = new Random(seed);
             isFree = true;
             nextTime = -1;
         }
@@ -44,6 +47,7 @@ namespace KSR
         }
         public TransportType getTransportType()
         {
+            //Thread.Sleep(100);
             int type = random.Next(1, 10);
             Console.WriteLine(type);
             if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5)
