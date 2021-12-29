@@ -8,35 +8,41 @@ namespace KSR
 {
     class Generation
     {
-        private int N;
-        public void Method()
+        Random random;
+        private int nullTime; // время появления последнего транспорта
+        private bool isFree; // Доступен ли генератор для генерации задержки нового авто
+        private int nextTime; // сколько должно пройти времени для появления следующего транспорта
+        public Generation()
         {
-            Random rnd = new Random();
-            double countOfRequests = 0;
-            int countFrequencies = 0;
-            List<int> requests = new List<int>();
-            List<double> timeOfRequests = new List<double>();
-            double countTime = 0;
-            double[] intervals = new double[N];
-            for (int i = 0; i < N; i++)
-            {
-                //intervals[i] = Math.Round((-1 / lambda) * Math.Log(1 - rnd.NextDouble()) + q / 2, 4);
-                countOfRequests += intervals[i];
-                countTime += intervals[i];
-                timeOfRequests.Add(Math.Round(countTime, 4));
-                countFrequencies++;
-                //if (countOfRequests > t)
-                {
-                    requests.Add(countFrequencies);
-                    countOfRequests = 0;
-                    countFrequencies = 0;
-                }
-                //intervalsListBox.Items.Add(intervals[i]);
-            }
-            requests.Add(countFrequencies); // добавление "хвоста" в последний интервал
-            double averageOfRequests = Math.Round(requests.Average(), 4);
-            //countOfRequestsBox.Text = averageOfRequests.ToString();
-           
+            random = new Random();
+            isFree = true;
+            nextTime = -1;
         }
+
+        public int NullTime { get => nullTime; set => nullTime = value; }
+        public bool IsFree { get => isFree; set => isFree = value; }
+        public int NextTime { get => nextTime; set => nextTime = value; }
+
+        public bool canNewTransport(int time)
+        {
+            bool answ = false;
+            if (isFree)
+            {
+                nullTime = time;
+                nextTime = random.Next(1, 6) * 1000;
+                isFree = false;
+            }
+            else
+            {
+                if ((time - nullTime)>=nextTime) 
+                {
+                    answ = true;
+                    isFree = true;
+                }
+            }
+            return answ;
+        }
+
+
     }
 }

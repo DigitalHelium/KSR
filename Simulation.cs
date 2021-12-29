@@ -30,7 +30,7 @@ namespace KSR
             this.k = k;
         }
 
-        public void startModeling()
+        public double startModeling()
         {
             double res1 = 0;
             VehicleStream MP1 = new VehicleStream("Light", timeOfCycle, numberOfCycle, G);
@@ -63,7 +63,7 @@ namespace KSR
             {
                 res4 = MP1.solvePolution() + MP2.solvePolution();
             }
-            
+            return res1 + res2 + res3 + res4;
         }
     }
 }

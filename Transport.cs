@@ -4,6 +4,7 @@ using GMap.NET.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Device.Location;
 
 namespace KSR
 {
@@ -11,16 +12,17 @@ namespace KSR
     public enum TransportType { bus, car }
     public class Transport
     {
-        private GMapMarker marker; // Эксемляр транспорта на карте
         private TransportType transportType; // Тип транспорта (Мотоцикл или Автомобиль)
         private bool isElectric; // Тип двигателя
         private double speed; // Скорость (км/ч)
         private double polution; // Выбросы
-        private double timeSpeed;
         private PointLatLng nullPosition; // Начальные координаты
-        private PointLatLng currentPosition; // Текущие координаты
         private PointLatLng oldPosition; // Конечные координаты
-        private DateTime dateNull = new DateTime();
+
+        private PointLatLng currentPosition; // Текущие координаты
+        private double distanse; // Длина пути (м)
+        private double timeDistanse; // Время прохождения пути (с)
+        private GMapMarker marker; // Эксемляр транспорта на карте
 
         public Transport (TransportType transportType, bool isElectric, double speed, double polution, PointLatLng nullPosition, PointLatLng oldPosition)
         {
@@ -30,29 +32,33 @@ namespace KSR
             this.polution = polution;
             this.nullPosition = nullPosition;
             this.oldPosition = oldPosition;
+
             this.currentPosition = nullPosition;
-            double x = oldPosition.Lat - nullPosition.Lat;
-            double y = oldPosition.Lng - nullPosition.Lng;
-            this.timeSpeed = Math.Sqrt(Math.Pow(x,2) + Math.Pow(y,2)) / speed;
-            //this.timeSpeed= cordsToMeters(OldPosition.Lat, OldPosition.Lng, NullPosition.Lat, NullPosition.Lng)/(speed*1000/3600);
-            Console.WriteLine(timeSpeed);
-            currentPosition = nullPosition;
+            // Расчет дистанции прохождения авто
+            GeoCoordinate c1 = new GeoCoordinate(nullPosition.Lat, nullPosition.Lng);
+            GeoCoordinate c2 = new GeoCoordinate(oldPosition.Lat, oldPosition.Lng);
+            distanse = c1.GetDistanceTo(c2);
+            // Расчет времени прохождения авто
+            timeDistanse = distanse * 3600 / (speed * 1000);
             marker = new GMarkerGoogle(currentPosition,new Bitmap("bus.png"));
-            //marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(currentPosition);
         }
 
         public GMapMarker Marker { get => marker; set => marker = value; }
         public TransportType TransportType { get => transportType; set => transportType = value; }
         public bool IsElectric { get => isElectric; set => isElectric = value; }
         public double Speed { get => speed; set => speed = value; }
-        public double TimeSpeed { get => timeSpeed; set => speed = value; }
         public double Polution { get => polution; set => polution = value; }
         public PointLatLng NullPosition { get => nullPosition; set => nullPosition = value; }
         public PointLatLng CurrentPosition { get => currentPosition; set => currentPosition = value; }
         public PointLatLng OldPosition { get => oldPosition; set => oldPosition = value; }
+        public double Distanse { get => distanse; set => distanse = value; }
+        public double TimeDistanse { get => timeDistanse; set => timeDistanse = value; }
 
-        public void updateMarker()
+        public void updatePosition(int FPS)
         {
+            currentPosition.Lat += (OldPosition.Lat - NullPosition.Lat) /(FPS*timeDistanse);
+            currentPosition.Lng += (OldPosition.Lng - NullPosition.Lng) / (FPS * timeDistanse);
+
             marker.Position = currentPosition;
         }
     }

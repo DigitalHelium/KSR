@@ -23,10 +23,10 @@ namespace KSR
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            map1Init();
+           // map1Init();
             map2Init();
         }
-        public void map1Init()
+        /*public void map1Init()
         {
             //Настройки для компонента GMap.
             gMapControl1.Bearing = 0;
@@ -105,7 +105,7 @@ namespace KSR
             
 
  
-        }
+        }*/
         public void map2Init()
         {
             //gMapControl2.Location = new System.Drawing.Point(538, 12);
@@ -140,18 +140,29 @@ namespace KSR
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            time += timer1.Interval;
-            Console.WriteLine(time);
+            timer.Time = timer.Time + timer1.Interval;
+            Console.WriteLine(timer.Time);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            timer = new Timer();
             timer1.Start();
-            Console.WriteLine("hi!");
-            MainHandler handler = new MainHandler(24, timer1, gMapControl2, markersOverlayMap2);
+            //Console.WriteLine("Start!");
+            MainHandler handler = new MainHandler(24, timer, gMapControl2, markersOverlayMap2);
             Thread handlerThread = new Thread(new ThreadStart(handler.run));
             handlerThread.Start();
             //timer1.Start();
+            int n = Int32.Parse(textBox1.Text);
+            int n1 = Int32.Parse(textBox2.Text);
+            int m = Int32.Parse(textBox3.Text);
+            int m1 = Int32.Parse(textBox4.Text);
+            int G = Int32.Parse(textBox5.Text);
+            int Cycle = Int32.Parse(textBox10.Text);
+            int countCycle = Int32.Parse(textBox9.Text);
+            int k = Int32.Parse(textBox8.Text);
+            Simulation s = new Simulation(n,n1,m,1,G,Cycle,countCycle,k);
+            textBox6.Text = s.startModeling().ToString();
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
@@ -165,6 +176,26 @@ namespace KSR
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
