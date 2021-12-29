@@ -141,7 +141,7 @@ namespace KSR
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer.Time = timer.Time + timer1.Interval;
-            Console.WriteLine(timer.Time);
+            //Console.WriteLine(timer.Time);
         }
 
         private void button1_Click(object sender, EventArgs e)
