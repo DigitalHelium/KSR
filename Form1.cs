@@ -18,6 +18,10 @@ namespace KSR
     {
         private GMap.NET.WindowsForms.GMapOverlay markersOverlayMap2;
         private GMapMarker marker;
+        private MainHandler handler;
+        private MainHandler handler1;
+        private MainHandler handler2;
+        private MainHandler handler3;
         public Form1()
         {
             InitializeComponent();
@@ -78,7 +82,9 @@ namespace KSR
                     pictureBox1.Image = new Bitmap("yellow.png");
                 }
                 pictureBox1.Update();
+                
             }
+            SimSetup(handler, handler1, handler2, handler3);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,10 +96,10 @@ namespace KSR
 
             timer1.Start();
             //Console.WriteLine("Start!");
-            MainHandler handler = new MainHandler(200,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192858, 50.102869));
-            MainHandler handler1 = new MainHandler(300,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193137, 50.103062), new GMap.NET.PointLatLng(53.192639, 50.102758), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192913, 50.102936));
-            MainHandler handler2 = new MainHandler(400,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192966, 50.102460), new GMap.NET.PointLatLng(53.192723, 50.103439), StateLight.red, trafficLight, new GMap.NET.PointLatLng(53.192896, 50.102802));
-            MainHandler handler3 = new MainHandler(500,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192765, 50.103485), new GMap.NET.PointLatLng(53.193006, 50.102487), StateLight.red, trafficLight, new GMap.NET.PointLatLng(53.192886, 50.102961));
+            handler = new MainHandler(200,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192858, 50.102869));
+            handler1 = new MainHandler(300,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193137, 50.103062), new GMap.NET.PointLatLng(53.192639, 50.102758), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192913, 50.102936));
+            handler2 = new MainHandler(400,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192966, 50.102460), new GMap.NET.PointLatLng(53.192723, 50.103439), StateLight.red, trafficLight, new GMap.NET.PointLatLng(53.192896, 50.102802));
+            handler3 = new MainHandler(500,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192765, 50.103485), new GMap.NET.PointLatLng(53.193006, 50.102487), StateLight.red, trafficLight, new GMap.NET.PointLatLng(53.192886, 50.102961));
 
             Thread handlerThread = new Thread(new ThreadStart(handler.run));
             Thread handlerThread1 = new Thread(new ThreadStart(handler1.run));
@@ -104,10 +110,16 @@ namespace KSR
             handlerThread2.Start();
             handlerThread3.Start();
             //timer1.Start();
+           
+
+        }
+        public void SimSetup(MainHandler handler, MainHandler handler1, MainHandler handler2, MainHandler handler3)
+        {
             int n = Int32.Parse(textBox1.Text);
             int n1 = Int32.Parse(textBox2.Text);
             int m = Int32.Parse(textBox3.Text);
             int m1 = Int32.Parse(textBox4.Text);
+            /*
             int G1 = Int32.Parse(textBox5.Text);
             int G2 = Int32.Parse(textBox17.Text);
             int G3 = Int32.Parse(textBox18.Text);
@@ -115,7 +127,17 @@ namespace KSR
             int G5 = Int32.Parse(textBox20.Text);
             int G6 = Int32.Parse(textBox21.Text);
             int G7 = Int32.Parse(textBox22.Text);
-            int G8 = Int32.Parse(textBox23.Text);
+            int G8 = Int32.Parse(textBox23.Text);*/
+
+            int G1 = handler.getTransportLength();
+            int G2 = handler.getTransportLength();
+            int G3 = handler1.getTransportLength();
+            int G4 = handler1.getTransportLength();
+            int G5 = handler2.getTransportLength();
+            int G6 = handler2.getTransportLength();
+            int G7 = handler3.getTransportLength();
+            int G8 = handler3.getTransportLength();
+
             int Cycle = Int32.Parse(textBox1.Text);
             int countCycle = Int32.Parse(textBox9.Text);
             int length = Int32.Parse(textBox14.Text);
@@ -125,7 +147,7 @@ namespace KSR
             int k4 = Int32.Parse(textBox12.Text);
             string[] threads = textBox13.Text.Split(' ');
 
-            Simulation s = new Simulation(n,n1,m,m1,Cycle,G1,G2,G3,G4,G5,G6,G7,G8,countCycle,k1,k2,k3,k4,length);
+            Simulation s = new Simulation(n, n1, m, m1, Cycle, G1, G2, G3, G4, G5, G6, G7, G8, countCycle, k1, k2, k3, k4, length);
             textBox6.Text = s.startModeling(threads[0], threads[1], threads[2], threads[3], threads[4], threads[5], threads[6], threads[7]).ToString();
         }
 

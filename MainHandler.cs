@@ -164,6 +164,10 @@ namespace KSR
                 }
             }
         }
+        public int getTransportLength()
+        {
+            return transports.Count();
+        }
         private void delTransport(Transport transport)
         {
             markers.Markers.Remove(transport.Marker);
