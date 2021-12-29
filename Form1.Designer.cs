@@ -45,7 +45,6 @@ namespace KSR
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -56,7 +55,6 @@ namespace KSR
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -64,20 +62,6 @@ namespace KSR
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -183,14 +167,6 @@ namespace KSR
             this.textBox4.TabIndex = 9;
             this.textBox4.Text = "75";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(938, 14);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.Text = "45";
-            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(575, 193);
@@ -280,15 +256,6 @@ namespace KSR
             this.label8.Text = "Время цикла светофора:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(692, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(240, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Фактическая наибольшая интенсивность G1:";
-            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(921, 284);
@@ -347,125 +314,6 @@ namespace KSR
             this.textBox12.TabIndex = 29;
             this.textBox12.Text = "150";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(692, 41);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(240, 13);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Фактическая наибольшая интенсивность G2:";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(938, 38);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 20);
-            this.textBox17.TabIndex = 39;
-            this.textBox17.Text = "45";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(692, 62);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(240, 13);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "Фактическая наибольшая интенсивность G3:";
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(938, 59);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 20);
-            this.textBox18.TabIndex = 41;
-            this.textBox18.Text = "45";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(692, 84);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(240, 13);
-            this.label18.TabIndex = 44;
-            this.label18.Text = "Фактическая наибольшая интенсивность G4:";
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(938, 79);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(100, 20);
-            this.textBox19.TabIndex = 43;
-            this.textBox19.Text = "45";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(692, 106);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(240, 13);
-            this.label19.TabIndex = 46;
-            this.label19.Text = "Фактическая наибольшая интенсивность G5:";
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(938, 104);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(100, 20);
-            this.textBox20.TabIndex = 45;
-            this.textBox20.Text = "45";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(692, 131);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(240, 13);
-            this.label20.TabIndex = 48;
-            this.label20.Text = "Фактическая наибольшая интенсивность G6:";
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(938, 128);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(100, 20);
-            this.textBox21.TabIndex = 47;
-            this.textBox21.Text = "45";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(692, 156);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(240, 13);
-            this.label21.TabIndex = 50;
-            this.label21.Text = "Фактическая наибольшая интенсивность G7:";
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(938, 154);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(100, 20);
-            this.textBox22.TabIndex = 49;
-            this.textBox22.Text = "45";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(692, 176);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(240, 13);
-            this.label22.TabIndex = 52;
-            this.label22.Text = "Фактическая наибольшая интенсивность G8:";
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(938, 173);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(100, 20);
-            this.textBox23.TabIndex = 51;
-            this.textBox23.Text = "45";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -481,7 +329,7 @@ namespace KSR
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(320, 20);
             this.textBox13.TabIndex = 54;
-            this.textBox13.Text = "Light OverHard Hard Light Light OverHard Hard Hard";
+            this.textBox13.Text = "Light Light Hard Light Light Light Hard Hard";
             // 
             // label13
             // 
@@ -519,20 +367,6 @@ namespace KSR
             this.Controls.Add(this.textBox14);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.textBox23);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBox22);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox21);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox20);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox17);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.label10);
@@ -543,7 +377,6 @@ namespace KSR
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -551,7 +384,6 @@ namespace KSR
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -579,7 +411,6 @@ namespace KSR
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
@@ -590,7 +421,6 @@ namespace KSR
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox7;
@@ -598,20 +428,6 @@ namespace KSR
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label13;

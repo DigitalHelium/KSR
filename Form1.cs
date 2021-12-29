@@ -145,7 +145,7 @@ namespace KSR
             int k2 = Int32.Parse(textBox7.Text);
             int k3 = Int32.Parse(textBox11.Text);
             int k4 = Int32.Parse(textBox12.Text);
-            string[] threads = textBox13.Text.Split(' ');
+            string[] threads = "Light Light Hard Light Light Light Hard Hard".Split(' ');
 
             Simulation s = new Simulation(n, n1, m, m1, Cycle, G1, G2, G3, G4, G5, G6, G7, G8, countCycle, k1, k2, k3, k4, length);
             textBox6.Text = s.startModeling(threads[0], threads[1], threads[2], threads[3], threads[4], threads[5], threads[6], threads[7]).ToString();
