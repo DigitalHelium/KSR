@@ -101,6 +101,7 @@ namespace KSR
         private void delTransport(Transport transport)
         {
             markers.Markers.Remove(transport.Marker);
+            map.Overlays.Remove(markers);
             transports.Remove(transport);
         }
     }

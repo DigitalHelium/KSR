@@ -17,10 +17,6 @@ namespace KSR
         private int calldownYellow; // Время смены цвета с желтого
         private PointLatLng nullPosition; // Начальные координаты перекрестка
         private PointLatLng oldPosition; // Конечные координаты Перекрестка
-        private PointLatLng G1;
-        private PointLatLng G2;
-        private PointLatLng K1;
-        private PointLatLng K2;
 
         public TrafficLight(int calldown, int calldownYellow, PointLatLng nullPosition, PointLatLng oldPosition)
         {
@@ -35,6 +31,8 @@ namespace KSR
 
         public void update(int time)
         {
+
+
             if (curruntState == StateLight.yellow)
             {
                 if (time - nullTime > calldownYellow)
