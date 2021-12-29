@@ -26,6 +26,7 @@ namespace KSR
         private void Form1_Load(object sender, EventArgs e)
         {
             map2Init();
+            pictureBox1.Image = new Bitmap("off.png");
         }
        
         public void map2Init()
@@ -59,11 +60,32 @@ namespace KSR
         {
             timer.Time = timer.Time + timer1.Interval;
             trafficLight.update(timer.Time);
+            if (stateLight != trafficLight.CurruntState)
+            {
+                if (trafficLight.CurruntState == StateLight.green)
+                {
+                    stateLight = StateLight.green;
+                    pictureBox1.Image = new Bitmap("green.png");
+                }
+                else if (trafficLight.CurruntState == StateLight.red)
+                {
+                    stateLight = StateLight.red;
+                    pictureBox1.Image = new Bitmap("red.png");
+                }
+                else if (trafficLight.CurruntState == StateLight.yellow)
+                {
+                    stateLight = StateLight.yellow;
+                    pictureBox1.Image = new Bitmap("yellow.png");
+                }
+                pictureBox1.Update();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             trafficLight = new TrafficLight(15000, 3000, new PointLatLng(0,0), new PointLatLng(0,0));
+            pictureBox1.Image = new Bitmap("green.png");
+            stateLight = trafficLight.CurruntState;
             timer = new Timer();
 
             timer1.Start();
