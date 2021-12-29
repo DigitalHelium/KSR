@@ -23,8 +23,9 @@ namespace KSR
         private GMap.NET.PointLatLng oldpos;
         private StateLight trafficType;
         private TrafficLight trafficLight;
+        private GMap.NET.PointLatLng stopPos;
 
-        public MainHandler(int seed,int FPS, Timer timer, GMapControl map, GMapOverlay markers, GMap.NET.PointLatLng nullpos, GMap.NET.PointLatLng oldpos, StateLight trafficType, TrafficLight trafficLight)
+        public MainHandler(int seed,int FPS, Timer timer, GMapControl map, GMapOverlay markers, GMap.NET.PointLatLng nullpos, GMap.NET.PointLatLng oldpos, StateLight trafficType, TrafficLight trafficLight, GMap.NET.PointLatLng stopPos)
         {
             this.FPS = FPS;
             this.timer = timer;
@@ -37,56 +38,36 @@ namespace KSR
             isFinish = false;
             this.trafficLight = trafficLight;
             this.trafficType = trafficType;
+            this.stopPos = stopPos;
         }
         
         public void run()
         {
             while (!isFinish)
             {
-                if (trafficLight.CurruntState == trafficType) { 
-                    // Обрабатываем существующие машины
-                    if (transports.Count != 0)
+
+                // Обрабатываем существующие машины
+                if (transports.Count != 0)
+                {
+                    for (int i = 0; i < transports.Count; i++)
                     {
-                        for (int i = 0; i < transports.Count; i++)
-                        {
                             // Обновляем координаты существующих машин
-                            Transport transport = transports.ElementAt(i);
+                        Transport transport = transports.ElementAt(i);
+                        if (trafficLight.CurruntState == trafficType )
+                        {
                             transport.updatePosition(FPS);
 
                             // Удаление транспорта при преодоление дистанции
-                            {
-                                if (transport.NullPosition.Lng < transport.OldPosition.Lng)
-                                {
-                                    if (transport.NullPosition.Lat < transport.OldPosition.Lat)
-                                    {
-                                        if (transport.CurrentPosition.Lng >= transport.OldPosition.Lng && transport.CurrentPosition.Lat >= transport.OldPosition.Lat)
-                                            delTransport(transport);
-
-                                    }
-                                    else
-                                    {
-                                        if (transport.CurrentPosition.Lng >= transport.OldPosition.Lng && transport.CurrentPosition.Lat <= transport.NullPosition.Lat)
-                                            delTransport(transport);
-                                    }
-                                }
-                                else
-                                {
-                                    if (transport.NullPosition.Lat < transport.OldPosition.Lat)
-                                    {
-                                        if (transport.CurrentPosition.Lng <= transport.OldPosition.Lng && transport.CurrentPosition.Lat >= transport.OldPosition.Lat)
-                                            delTransport(transport);
-
-                                    }
-                                    else
-                                    {
-                                        if (transport.CurrentPosition.Lng <= transport.OldPosition.Lng && transport.CurrentPosition.Lat <= transport.NullPosition.Lat)
-                                            delTransport(transport);
-                                    }
-                                }
-                            }
+                            delTransportMarker(transport);
                         }
+                        else
+                        {
+                            transportAfterLight(transport);
+                        }
+                        
                     }
                 }
+            
             
 
                 // Создаем новые машины
@@ -104,7 +85,85 @@ namespace KSR
                 Thread.Sleep(1000/FPS);
             }
         }
+        public void transportAfterLight(Transport transport)
+        {
+            if (transport.NullPosition.Lng < transport.OldPosition.Lng)
+            {
+                if (transport.NullPosition.Lat < transport.OldPosition.Lat)
+                {
+                    if (transport.CurrentPosition.Lng >= stopPos.Lng && transport.CurrentPosition.Lat >= stopPos.Lat)
+                    {
+                        transport.updatePosition(FPS);
+                        delTransportMarker(transport);
+                    }
 
+                }
+                else
+                {
+                    if (transport.CurrentPosition.Lng >= stopPos.Lng && transport.CurrentPosition.Lat <= stopPos.Lat)
+                    {
+                        transport.updatePosition(FPS);
+                        delTransportMarker(transport);
+                    }
+                }
+            }
+            else
+            {
+                if (transport.NullPosition.Lat < transport.OldPosition.Lat)
+                {
+                    if (transport.CurrentPosition.Lng <= stopPos.Lng && transport.CurrentPosition.Lat >= stopPos.Lat)
+                    {
+                        transport.updatePosition(FPS);
+                        delTransportMarker(transport);
+                    }
+
+                }
+                else
+                {
+                    if (transport.CurrentPosition.Lng <= stopPos.Lng && transport.CurrentPosition.Lat >= stopPos.Lat)
+                    {
+                        transport.updatePosition(FPS);
+                        delTransportMarker(transport);
+                    }
+                }
+            }
+        }
+
+    
+    
+        public void delTransportMarker(Transport transport)
+        {
+            {
+                if (transport.NullPosition.Lng < transport.OldPosition.Lng)
+                {
+                    if (transport.NullPosition.Lat < transport.OldPosition.Lat)
+                    {
+                        if (transport.CurrentPosition.Lng >= transport.OldPosition.Lng && transport.CurrentPosition.Lat >= transport.OldPosition.Lat)
+                            delTransport(transport);
+
+                    }
+                    else
+                    {
+                        if (transport.CurrentPosition.Lng >= transport.OldPosition.Lng && transport.CurrentPosition.Lat <= transport.NullPosition.Lat)
+                            delTransport(transport);
+                    }
+                }
+                else
+                {
+                    if (transport.NullPosition.Lat < transport.OldPosition.Lat)
+                    {
+                        if (transport.CurrentPosition.Lng <= transport.OldPosition.Lng && transport.CurrentPosition.Lat >= transport.OldPosition.Lat)
+                            delTransport(transport);
+
+                    }
+                    else
+                    {
+                        if (transport.CurrentPosition.Lng <= transport.OldPosition.Lng && transport.CurrentPosition.Lat <= transport.NullPosition.Lat)
+                            delTransport(transport);
+                    }
+                }
+            }
+        }
         private void delTransport(Transport transport)
         {
             markers.Markers.Remove(transport.Marker);
