@@ -44,15 +44,15 @@ namespace KSR
         }
         public TransportType getTransportType()
         {
-            int type = random.Next(1, 3);
-            switch (type)
-            {
-                case 1:return TransportType.bus;
-                    break;
-                case 2:return TransportType.car;
-                    break;
-                default:return TransportType.NaN;
-            }
+            int type = random.Next(1, 10);
+            Console.WriteLine(type);
+            if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5)
+                return TransportType.car;
+            if (type == 6 || type == 7 || type == 8 )
+                return TransportType.bus;
+            if (type == 9 || type == 10 )
+                return TransportType.truck;
+            return TransportType.NaN;
         }
 
 

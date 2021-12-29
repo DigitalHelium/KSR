@@ -9,7 +9,7 @@ using System.Device.Location;
 namespace KSR
 {
 
-    public enum TransportType { bus, car,NaN }
+    public enum TransportType { bus, car,truck,NaN }
     public class Transport
     {
         private TransportType transportType; // Тип транспорта (Мотоцикл или Автомобиль)
@@ -45,6 +45,9 @@ namespace KSR
                     break;
                 case TransportType.car:
                     marker = new GMarkerGoogle(currentPosition, new Bitmap("car.png"));
+                    break;
+                case TransportType.truck:
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("truck.png"));
                     break;
             }
         }
