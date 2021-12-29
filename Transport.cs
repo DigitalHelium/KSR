@@ -41,10 +41,10 @@ namespace KSR
             // Расчет времени прохождения авто
             timeDistanse = distanse * 3600 / (speed * 1000);
             switch(transportType){
-                case TransportType.bus: marker = new GMarkerGoogle(currentPosition, new Bitmap((Bitmap)Image.FromFile("bus.png"), new Size(16, 16)));
+                case TransportType.bus: marker = new GMarkerGoogle(currentPosition, new Bitmap("bus.png"));
                     break;
                 case TransportType.car:
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap((Bitmap)Image.FromFile("car.png"), new Size(16, 16)));
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("car.png"));
                     break;
             }
         }
