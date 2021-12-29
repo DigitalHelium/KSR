@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 
@@ -62,14 +63,15 @@ namespace KSR
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            trafficLight = new TrafficLight(15000, 3000, new PointLatLng(0,0), new PointLatLng(0,0));
             timer = new Timer();
+
             timer1.Start();
             //Console.WriteLine("Start!");
-            MainHandler handler = new MainHandler(200,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055), StateLight.green,);
-            MainHandler handler1 = new MainHandler(300,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193137, 50.103062), new GMap.NET.PointLatLng(53.192639, 50.102758), StateLight.green,);
-            MainHandler handler2 = new MainHandler(400,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192966, 50.102460), new GMap.NET.PointLatLng(53.192723, 50.103439), StateLight.red,);
-            MainHandler handler3 = new MainHandler(500,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192765, 50.103485), new GMap.NET.PointLatLng(53.193006, 50.102487), StateLight.red,);
+            MainHandler handler = new MainHandler(200,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055), StateLight.green, trafficLight);
+            MainHandler handler1 = new MainHandler(300,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193137, 50.103062), new GMap.NET.PointLatLng(53.192639, 50.102758), StateLight.green, trafficLight);
+            MainHandler handler2 = new MainHandler(400,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192966, 50.102460), new GMap.NET.PointLatLng(53.192723, 50.103439), StateLight.red, trafficLight);
+            MainHandler handler3 = new MainHandler(500,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192765, 50.103485), new GMap.NET.PointLatLng(53.193006, 50.102487), StateLight.red, trafficLight);
 
             Thread handlerThread = new Thread(new ThreadStart(handler.run));
             Thread handlerThread1 = new Thread(new ThreadStart(handler1.run));

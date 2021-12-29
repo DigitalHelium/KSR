@@ -24,6 +24,7 @@ namespace KSR
         }
 
         private Timer timer;
+        private TrafficLight trafficLight;
 
         #region Код, автоматически созданный конструктором форм Windows
 
