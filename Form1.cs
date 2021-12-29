@@ -133,10 +133,6 @@ namespace KSR
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
             markersOverlayMap2 = new GMap.NET.WindowsForms.GMapOverlay("marker");
 
-            //светофор
-            marker = new GMarkerGoogle(new GMap.NET.PointLatLng(53.192888, 50.102903), GMarkerGoogleType.red);
-            markersOverlayMap2.Markers.Add(marker);
-            gMapControl2.Overlays.Add(markersOverlayMap2);
             /*
             GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen marker = new GMap.NET.WindowsForms.Markers.GMapMarkerGoogleGreen(new GMap.NET.PointLatLng(53.192875, 50.102905));
             marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
