@@ -84,7 +84,6 @@ namespace KSR
                 pictureBox1.Update();
                 
             }
-            SimSetup(handler, handler1, handler2, handler3);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,6 +94,7 @@ namespace KSR
             timer = new Timer();
 
             timer1.Start();
+            timer2.Start();
             //Console.WriteLine("Start!");
             handler = new MainHandler(200,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.192646, 50.102724), new GMap.NET.PointLatLng(53.193212, 50.103055), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192858, 50.102869));
             handler1 = new MainHandler(300,24, timer, gMapControl2, markersOverlayMap2, new GMap.NET.PointLatLng(53.193137, 50.103062), new GMap.NET.PointLatLng(53.192639, 50.102758), StateLight.green, trafficLight, new GMap.NET.PointLatLng(53.192913, 50.102936));
@@ -189,6 +189,11 @@ namespace KSR
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            SimSetup(handler, handler1, handler2, handler3);
         }
     }
 }

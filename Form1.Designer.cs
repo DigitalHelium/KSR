@@ -67,6 +67,7 @@ namespace KSR
             this.label13 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -357,6 +358,11 @@ namespace KSR
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 5000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,6 +439,7 @@ namespace KSR
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
