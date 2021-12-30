@@ -148,7 +148,10 @@ namespace KSR
             string[] threads = "Light Light Hard Light Light Light Hard Hard".Split(' ');
 
             Simulation s = new Simulation(n, n1, m, m1, Cycle, G1, G2, G3, G4, G5, G6, G7, G8, countCycle, k1, k2, k3, k4, length);
-            textBox6.Text = s.startModeling(threads[0], threads[1], threads[2], threads[3], threads[4], threads[5], threads[6], threads[7]).ToString();
+            if (checkBox1.Checked)
+                textBox6.Text = (s.startModeling(threads[0], threads[1], threads[2], threads[3], threads[4], threads[5], threads[6], threads[7])*0.6).ToString();
+            else
+                textBox6.Text = (s.startModeling(threads[0], threads[1], threads[2], threads[3], threads[4], threads[5], threads[6], threads[7])).ToString();
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
