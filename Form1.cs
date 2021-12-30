@@ -198,5 +198,10 @@ namespace KSR
         {
             SimSetup(handler, handler1, handler2, handler3);
         }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

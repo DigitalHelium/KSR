@@ -137,7 +137,7 @@ namespace KSR
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
-            this.textBox1.Text = " 125";
+            this.textBox1.Text = "30";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
@@ -146,7 +146,7 @@ namespace KSR
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 7;
-            this.textBox2.Text = " 250";
+            this.textBox2.Text = " 30";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
@@ -155,7 +155,7 @@ namespace KSR
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 8;
-            this.textBox3.Text = "36";
+            this.textBox3.Text = "30";
             // 
             // textBox4
             // 
@@ -163,7 +163,7 @@ namespace KSR
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 9;
-            this.textBox4.Text = "75";
+            this.textBox4.Text = " 30";
             // 
             // textBox8
             // 
@@ -171,7 +171,7 @@ namespace KSR
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 13;
-            this.textBox8.Text = "150";
+            this.textBox8.Text = " 40";
             // 
             // textBox9
             // 
@@ -180,6 +180,7 @@ namespace KSR
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 12;
             this.textBox9.Text = "40";
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // textBox10
             // 
@@ -187,7 +188,7 @@ namespace KSR
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 11;
-            this.textBox10.Text = "40";
+            this.textBox10.Text = "30";
             // 
             // n
             // 
@@ -269,7 +270,7 @@ namespace KSR
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 25;
-            this.textBox7.Text = "150";
+            this.textBox7.Text = "40";
             // 
             // label10
             // 
@@ -286,7 +287,7 @@ namespace KSR
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(100, 20);
             this.textBox11.TabIndex = 27;
-            this.textBox11.Text = "150";
+            this.textBox11.Text = " 40";
             // 
             // label11
             // 
@@ -303,7 +304,7 @@ namespace KSR
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(100, 20);
             this.textBox12.TabIndex = 29;
-            this.textBox12.Text = "150";
+            this.textBox12.Text = " 40";
             // 
             // pictureBox1
             // 
