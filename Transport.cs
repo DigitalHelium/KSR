@@ -40,28 +40,35 @@ namespace KSR
             distanse = c1.GetDistanceTo(c2);
             // Расчет времени прохождения авто
             timeDistanse = distanse * 3600 / (speed * 1000);
-            if (transportType == TransportType.bus) {
-                if (isElectric)
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap("bus.png"));
-                else
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap("busEco.png"));
-            }
-            if (transportType == TransportType.bus)
+            switch (transportType)
             {
-                if (isElectric)
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap("car.png"));
-                else
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap("carEco.png"));
-            }
-            if (transportType == TransportType.bus)
-            {
-                if (isElectric)
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap("truck.png"));
-                else
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap("truckEco.png"));
+                case TransportType.bus:
+                    {
+                        if(!isElectric)
+                            marker = new GMarkerGoogle(currentPosition, new Bitmap("bus.png"));
+                        else
+                            marker = new GMarkerGoogle(currentPosition, new Bitmap("busEco.png"));
+                    }
+                    break;
+                case TransportType.car:
+                    {
+                        if (!isElectric)
+                            marker = new GMarkerGoogle(currentPosition, new Bitmap("car.png"));
+                        else
+                            marker = new GMarkerGoogle(currentPosition, new Bitmap("carEco.png"));
+                    }
+                    break;
+                case TransportType.truck:
+                    {
+                        if (!isElectric)
+                            marker = new GMarkerGoogle(currentPosition, new Bitmap("truck.png"));
+                        else
+                            marker = new GMarkerGoogle(currentPosition, new Bitmap("truckEco.png"));
+                    }
+                    break;
             }
 
-            
+
         }
 
         public GMapMarker Marker { get => marker; set => marker = value; }
