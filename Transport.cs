@@ -40,16 +40,28 @@ namespace KSR
             distanse = c1.GetDistanceTo(c2);
             // Расчет времени прохождения авто
             timeDistanse = distanse * 3600 / (speed * 1000);
-            switch(transportType){
-                case TransportType.bus: marker = new GMarkerGoogle(currentPosition, new Bitmap("bus.png"));
-                    break;
-                case TransportType.car:
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap("car.png"));
-                    break;
-                case TransportType.truck:
-                    marker = new GMarkerGoogle(currentPosition, new Bitmap("truck.png"));
-                    break;
+            if (transportType == TransportType.bus) {
+                if (isElectric)
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("bus.png"));
+                else
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("busEco.png"));
             }
+            if (transportType == TransportType.bus)
+            {
+                if (isElectric)
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("car.png"));
+                else
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("carEco.png"));
+            }
+            if (transportType == TransportType.bus)
+            {
+                if (isElectric)
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("truck.png"));
+                else
+                    marker = new GMarkerGoogle(currentPosition, new Bitmap("truckEco.png"));
+            }
+
+            
         }
 
         public GMapMarker Marker { get => marker; set => marker = value; }
