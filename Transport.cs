@@ -79,7 +79,8 @@ namespace KSR
         {
             currentPosition.Lat += (OldPosition.Lat - NullPosition.Lat) /(FPS*timeDistanse);
             currentPosition.Lng += (OldPosition.Lng - NullPosition.Lng) / (FPS * timeDistanse);
-
+            
+            if(marker != null)
             marker.Position = currentPosition;
         }
     }
