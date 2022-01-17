@@ -76,7 +76,7 @@ namespace KSR
                     int rand = random.Next(15, 40);
                     //Console.WriteLine(rand);
                     //Thread.Sleep(100);
-                    Transport tr = new Transport(generation.getTransportType(), false, rand, 1,nullpos,oldpos);
+                    Transport tr = new Transport(generation.getTransportType(), random.Next(10)<6?true:false, rand, 1,nullpos,oldpos);
                     transports.Add(tr);
                     markers.Markers.Add(tr.Marker);
                     map.Overlays.Add(markers);
